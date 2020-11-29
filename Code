@@ -1,0 +1,44 @@
+#Rock Paper Scissors
+import random
+def FunGame():
+    name=input("Enter your name --->")
+    print(f"Hi {name},welcome to the Game.....You are playing against the System")
+    print("")
+    
+    values=['rock','paper','scissors']
+    
+    rounds=0
+    p=0
+    s=0
+    n=int(input("Enter the number of rounds u want to play-->>"))
+    while rounds<n:
+        rounds+=1
+        player_value=random.choice(values)
+        system_value=random.choice(values)
+        if player_value=='paper':
+            if system_value=='rock':
+                print(f"{name} won")
+                p+=1
+            else:
+                print("System won !!")
+                s+=1
+        elif player_value=='scissors':
+            if system_value=='paper':
+                print(f"{name} won")
+                p+=1
+            else:
+                print("System won !!")
+                s+=1
+        elif player_value=='rock':
+            if system_value=='scissors':
+                print(f"{name} won")
+                p+=1
+            else:
+                print("System won !!")
+                s+=1
+        elif player_value==system_value:
+            print("TIE")
+        else:
+            print('Invalid entry !!!')
+    print(f"{name} won {p} rounds and system won {s} rounds....")
+FunGame()
